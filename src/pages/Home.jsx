@@ -160,27 +160,29 @@ const Home = ({ authenticated }) => {
             ></div>
           </button>
           
-          <button 
-            className="px-8 py-3 rounded-full font-semibold transition-all duration-300 relative overflow-hidden"
-            style={{ 
-              background: "rgba(255, 255, 255, 0.7)",
-              border: "2px solid rgba(59, 130, 246, 0.3)",
-              color: "#1e3a8a"
-            }}
-            onClick={handleRegisterClick}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-              e.currentTarget.style.boxShadow = "0 10px 25px -5px rgba(59, 130, 246, 0.3)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.9)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 6px -1px rgba(59, 130, 246, 0.2)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.7)";
-            }}
-          >
-            <span className="relative z-10">Register Now</span>
-          </button>
+          {!authenticated && (
+            <button 
+              className="px-8 py-3 rounded-full font-semibold transition-all duration-300 relative overflow-hidden"
+              style={{ 
+                background: "rgba(255, 255, 255, 0.7)",
+                border: "2px solid rgba(59, 130, 246, 0.3)",
+                color: "#1e3a8a"
+              }}
+              onClick={handleRegisterClick}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow = "0 10px 25px -5px rgba(59, 130, 246, 0.3)";
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.9)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 6px -1px rgba(59, 130, 246, 0.2)";
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.7)";
+              }}
+            >
+              <span className="relative z-10">Register Now</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

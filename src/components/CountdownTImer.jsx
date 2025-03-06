@@ -68,7 +68,13 @@ const CountdownTimer = ({ targetDate }) => {
           border: `1px solid ${theme.columbiaBlue}40`
         }}
       >
-        <p className="text-sm lg:text-lg tracking-widest font-semibold" style={{ color: theme.berkeleyBlue }}>
+        <p className="text-sm sm:text-lg lg:text-xl font-bold tracking-wider" style={{ color: theme.berkeleyBlue }}>
+  <span className="text-transparent bg-clip-text bg-gradient-to-r animate-text-shimmer"
+    style={{ 
+      backgroundImage: `linear-gradient(to right, ${theme.eerieBlack}, ${theme.berkeleyBlue}, ${theme.eerieBlack})`, // Darker gradient
+      backgroundSize: "200% auto"
+    }}
+  ></span>
           EVENT COUNTDOWN
         </p>
       </div>

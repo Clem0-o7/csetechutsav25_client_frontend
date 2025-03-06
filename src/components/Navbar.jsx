@@ -25,6 +25,7 @@ const Navbar = ({ authenticated }) => {
     { name: "EVENTS", link: "events" },
     { name: "FAQs", link: "faq" },
     { name: "CONTACT", link: "contact" },
+    {name : "Memories", link : "pastyearhighlights"}
   ];
 
   return (

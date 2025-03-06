@@ -24,6 +24,7 @@
     "@react-spring/web": "^9.7.5",
     "axios": "^1.6.7",
     "client": "file:",
+    "dotenv": "^16.4.7",
     "emailjs": "^4.0.3",
     "framer-motion": "^12.4.9",
     "lucide-react": "^0.477.0",

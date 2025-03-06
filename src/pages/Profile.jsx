@@ -110,7 +110,7 @@ const Profile = () => {
 
   const verifyRequest = () => {
     if (sessionStorage.getItem("paid") === "true") {
-      return "Payment Successful";
+      return "Payment Verified";
     } else if (
       sessionStorage.getItem("paid") === "false" &&
       sessionStorage.getItem("transactionNumber") !== ""
@@ -121,7 +121,7 @@ const Profile = () => {
   };
 
   const displayButton = () => {
-    if (!mobileCheck && verifyRequest() === "Payment Successful") {
+    if (!mobileCheck && verifyRequest() === "Payment Verified") {
       return true;
     }
     return false;
@@ -336,7 +336,7 @@ const Profile = () => {
               <Lottie options={defaultOptions} />
             </div>
           )}
-          {!(verifyRequest() === "Payment Successful") && (
+          {!(verifyRequest() === "Payment Verified") && (
             <div>
               <div className={`text-1xl mt-3 flex items-center font-bold`}>
                 ** For Payment Details Download this file{" "}

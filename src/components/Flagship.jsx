@@ -40,7 +40,7 @@ const Flagship = () => {
             The metaverse is driving innovation across industries, from immersive entertainment experiences and revolutionary education methods to transformative healthcare applications. Companies leveraging virtual environments in retail, architecture, and real estate are reducing costs and accelerating decision-making. As the metaverse evolves, businesses must adapt to stay competitive and unlock new growth opportunities.
           </p>
           <Link
-            to="/events/workshop"
+            to="/events/Workshop"
             className={`px-6 py-2 flex items-center gap-2 bg-[#003262] text-white font-semibold rounded-2xl transition-transform duration-300 transform hover:scale-105 shadow-md hover:shadow-lg ${
               isHovered ? 'pl-3 pr-6' : ''
             } animate-pulse hover:animate-none`}
