@@ -18,7 +18,7 @@ const Home = ({ authenticated }) => {
   const navigate = useNavigate();
 
   // Fetch welcome data from backend
-  useEffect(() => {
+/*   useEffect(() => {
     const fetchWelcomeData = async () => {
       try {
         const response = await axios.get('/api/welcome');
@@ -37,7 +37,7 @@ const Home = ({ authenticated }) => {
     };
 
     fetchWelcomeData();
-  }, []);
+  }, []); */
 
   // Typing effect for the tagline
   useEffect(() => {
@@ -127,9 +127,9 @@ const Home = ({ authenticated }) => {
               </h3>
             )
           )}
-          <p className="text-lg lg:text-xl text-blue-800 leading-relaxed">
+          {/* <p className="text-lg lg:text-xl text-blue-800 leading-relaxed">
             {welcomeData.welcomeText}
-          </p>
+          </p> */}
         </div>
 
         {/* Action Buttons */}
