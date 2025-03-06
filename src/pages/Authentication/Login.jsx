@@ -58,7 +58,7 @@ const Login = () => {
         elevation={2}
         className="bg-white/50   flex flex-col justify-center rounded-xl gap-9 p-9"
       >
-        <h1 className="text-4xl font-bold">TECHUTSAV 2024</h1>
+        <h1 className="text-4xl font-bold">TECHUTSAV 2025</h1>
         <h2 className="font-semibold text-3xl text-center">LOGIN</h2>
         <form className="flex flex-col gap-9">
           <div className="flex flex-col gap-5">

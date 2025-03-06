@@ -5,11 +5,12 @@ import Events from "./pages/Events";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
+import PastYearHighlights from "./pages/pyq";
 import { Element } from "react-scroll";
 import { useEffect, useState } from "react";
 import { api } from "./api/auth";
 import MainLoader from "./components/MainLoader";
-import Flagship from "./components/Flagship";
+// import Flagship from "./components/Flagship";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -51,8 +52,8 @@ function App() {
       <Element id="about" name="about">
         <About authenticated={authenticated} />
       </Element>
-      <Element id="Flagship" name="Flagship">
-        <Flagship authenticated={authenticated} />
+      <Element id="pastyearhighlights" name="pastyearhighlights">
+        <PastYearHighlights authenticated={authenticated} /> 
       </Element>
       <Element id="events" name="events">
         <Events authenticated={authenticated} />

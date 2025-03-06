@@ -8,3 +8,143 @@
 .fill-right.hovered {
   background-position: left bottom;
 }
+
+
+
+.register-button {
+  background-color: #0B385F; /* Berkeley Blue */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.register-button:hover {
+  background-color: #3373B0; /* UCLA Blue */
+  transform: scale(1.05);
+}
+
+.register-button:active {
+  transform: scale(0.95);
+}
+
+/* Carousel Styles */
+.carousel .slide {
+  background: none !important;
+}
+
+.carousel .thumb {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.carousel .thumb:hover {
+  transform: scale(1.1);
+}
+
+.carousel .carousel-status {
+  font-size: 14px;
+  color: #1C2127; /* Eerie Black */
+}
+
+.carousel .control-prev,
+.carousel .control-next {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel .control-prev:hover,
+.carousel .control-next:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Workshop Container */
+.workshop-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #E7F1FB; /* Alice Blue */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Workshop Details */
+.workshop-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1C2127;
+}
+
+.workshop-description {
+  font-size: 18px;
+  color: #0B385F;
+  margin-bottom: 10px;
+}
+
+.workshop-info {
+  font-size: 16px;
+  color: #3373B0;
+}
+
+
+/* General Button Styling */
+.event-button {
+  background-color: #004aad; /* Adhering to the theme */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.event-button:hover {
+  background-color: #002f6c;
+  transform: scale(1.05);
+}
+
+/* Close Button in Modal */
+.close-button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 8px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+
+.event-button {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.event-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff6a5b, #fe924a);
+}
+

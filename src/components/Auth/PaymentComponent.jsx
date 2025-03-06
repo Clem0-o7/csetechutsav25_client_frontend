@@ -81,7 +81,7 @@ const PaymentComponent = ({
       elevation={2}
       className="flex flex-col justify-center items-center gap-5 rounded-xl p-5"
     >
-      <h1 className="text-4xl font-bold">TECHUTSAV 2024</h1>
+      <h1 className="text-4xl font-bold">TECHUTSAV 2025</h1>
       <h2 className="font-semibold text-3xl">PAYMENT VERIFICATION</h2>
       <div className="bg-white/50 w-100 h-fit p-7 flex flex-col justify-center rounded-xl relative font-poppins">
         <form className="flex flex-col gap-9 items-start">
@@ -174,7 +174,8 @@ const PaymentComponent = ({
                 sx={{ marginLeft: "10px" }}
                 onClick={() => {
                   window.open(
-                    "https://techutsav2024.blob.core.windows.net/eventdetails/Techutsav2024Paymentprocess.pdf"
+                    "https://techutsav2024.blob.core.windows.net/eventdetails/Techutsav2025Paymentprocess.pdf"
+                    /*https://clement2004.blob.core.windows.net/techutsav25/Screenshot 2025-03-03 232015.png*/
                   );
                 }}
               >

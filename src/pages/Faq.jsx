@@ -1,23 +1,21 @@
 import { useState, useEffect, useRef } from "react";
 import Question from "../components/Question";
+import Particles from "../components/Particles";
+
+const theme = {
+  eerieBlack: "#1C2127",
+  berkeleyBlue: "#0B385F",
+  uclaBlue: "#3373B0",
+  columbiaBlue: "#BED4E9",
+  aliceBlue: "#E7F1FB"
+};
 
 const faqSections = [
   {
     title: "General Info",
     faqs: [
       { question: "Who can participate?", answer: "It is open to students from all backgrounds, you are welcome to participate and showcase your skills." },
-      { question: "Will this be conducted digitally or physically?", answer: "All the events and workshops will be conducted as an in-person event at the designated venue. Participants are required to be present to take part in the competition and activities." },
-      { question: "What if I have queries that are not answered in the FAQ?", answer: "If you have any additional questions, feel free to check the Contact Us page for ways to reach out. We are happy to assist you." }
-    ],
-  },
-  {
-    title: "Workshops & Event Details",
-    faqs: [
-      { question: "What is the participation fee?", answer: "The registration fee is ₹500 per person. This includes access to all workshops, events, a registration kit, and food during the event." },
-      { question: "What technologies can be used?", answer: "Participants can use any programming language or framework. However, certain events may have specific technology requirements, so it is recommended to check the event guidelines before proceeding." },
-      { question: "Do all events have cash prizes?", answer: "Not all events offer cash prizes. Some may provide monetary rewards, while others focus on recognition, certificates, and exposure." },
-      { question: "How should we pay the fees?", answer: "The registration fee should be paid using the ICICI Bank Portal. After making the payment, participants must enter the transaction number for verification. Once verified, the participant’s profile will be updated accordingly." },
-      { question: "What events can we attend?", answer: "You can attend all the events of the particular department and workshops irrespective of the department chosen." },
+      { question: "Will this be conducted digitally or physically?", answer: "All the events and workshops will be conducted as an in-person event at the designated venue. Participants are required to be present in the venue to take part in it." },
     ],
   },
   {
@@ -25,7 +23,15 @@ const faqSections = [
     faqs: [
       { question: "Should I register as a team?", answer: "Only individual registration is required. Participants will have the opportunity to collaborate during the event if needed." },
       { question: "Can we register on the spot?", answer: "Yes, on-spot registrations are allowed. However, it is advisable to register in advance to secure your participation and receive event details early." },
-      { question: "Will all participants receive a certificate?", answer: "Yes, every participant will receive a certificate of participation, acknowledging their involvement." },
+      { question: "Will all participants receive a certificate?", answer: "Yes, every participant will receive a certificate acknowledging their involvement." },
+    ],
+  },
+  {
+    title: "Workshops & Event Details",
+    faqs: [
+      { question: "What is the participation fee?", answer: "The registration fee is ₹500 per person. This includes access to all workshops, events, registration kit, and food during the event." },
+      { question: "How should we pay the fees?", answer: "The registration fee should be paid using the ICICI Bank Portal. After making the payment, participants must enter the transaction number for verification. Once verified, the participant’s profile will be updated accordingly." },
+      { question: "What events can we attend?", answer: "You can attend all the events of the particular department and workshops irrespective of the department chosen." },
     ],
   },
   {
@@ -44,13 +50,18 @@ const Faq = () => {
   const faqRef = useRef(null);
 
   useEffect(() => {
+    document.body.classList.add("overflow-x-hidden"); 
+    return () => document.body.classList.remove("overflow-x-hidden");
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.3 }
     );
 
     if (faqRef.current) {
@@ -73,102 +84,80 @@ const Faq = () => {
 
   return (
     <div
-    ref={faqRef}
-    style={{
-      textAlign: "center",
-      padding: "2.5rem 1.5rem",
-      paddingBottom: "2.5rem",  // Added padding below the FAQ section
-      background: "#e0f2fe",
-      color: "#1c2127",
-      transition: "all 0.7s ease-in-out",
-      opacity: isVisible ? 1 : 0,
-      transform: isVisible ? "translateY(0)" : "translateY(10px)",
-    }}
-  >
-  
-{/* FAQ Title */}
-<h1
-  style={{
-    fontWeight: "bold",
-    fontSize: "4rem", // Equivalent to text-4xl
-    paddingBottom: "2.5rem",
-    backgroundImage: "linear-gradient(to right, #278092, #278092)", // Solid color using gradient
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    position: "relative",
-    display: "inline-block",
-    transition: "opacity 0.7s ease-in-out",
-    opacity: isVisible ? 1 : 0,
-  }}
-  className="sm:text-6xl"
+  className="relative h-full bg-sky-100 flex items-center justify-center overflow-auto w-full px-3 py-4 sm:px-6 sm:py-8 lg:py-10"
+  ref={faqRef}
 >
-  FAQs
-</h1>
 
-
-
-
-      {/* Category Buttons */}
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "1rem",
-          justifyContent: "center",
-          opacity: isVisible ? 1 : 0,
-          transition: "opacity 0.7s ease-in-out",
-        }}
-      >
-        {faqSections.map((section, index) => (
-          <button
-            key={index}
-            onClick={() => setOpenSection(index)}
-            style={{
-              padding: "0.75rem 1.5rem",
-              borderRadius: "999px",
-              fontSize: "1rem",
-              fontWeight: "bold",
-              color: "white",
-              background: openSection === index ? "#0b385f" : "#3373b0",
-              transition: "all 0.5s ease-in-out",
-              border: "none",
-              cursor: "pointer",
-              transform: openSection === index ? "scale(1.05)" : "scale(1)",
-              boxShadow: openSection === index ? "0px 4px 10px rgba(0, 0, 0, 0.2)" : "none",
-            }}
-          >
-            {section.title}
-          </button>
-        ))}
+      <div className="absolute inset-0 w-full h-full">
+        <Particles
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleColors={["#ffffff", "#a2d2ff", "#bde0fe"]}
+          moveParticlesOnHover={true}
+          particleHoverFactor={2}
+          alphaParticles={true}
+          particleBaseSize={120}  // Slightly bigger particles
+          sizeRandomness={1}
+          cameraDistance={20}
+          disableRotation={false}
+          className="w-full h-full"
+        />
       </div>
 
-      {/* Questions Section */}
-      {openSection !== null && (
-        <div
+      {/* FAQ Content */}
+      <div
+        className={`relative z-10 transition-all duration-1000 ease-in-out w-full max-w-4xl px-3 sm:px-6 lg:px-8 ${
+          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
+      >
+        <h1
+          className="text-center text-3xl sm:text-5xl font-extrabold tracking-tight"
           style={{
-            marginTop: "1.5rem",
-            padding: "1.5rem",
-            background: "white",
-            borderRadius: "10px",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            maxWidth: "800px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            opacity: isVisible ? 1 : 0,
-            transition: "opacity 0.7s ease-in-out",
+            background: `linear-gradient(to right, ${theme.eerieBlack}, ${theme.berkeleyBlue})`,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           }}
         >
-          {faqSections[openSection].faqs.map((faq, idx) => (
-            <Question
-              key={idx}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openQuestion[openSection] === idx}
-              onClick={() => toggleQuestion(openSection, idx)}
-            />
+          FAQs
+        </h1>
+        <div
+          className="h-1 w-20 sm:w-28 mx-auto mt-2 sm:mt-3 rounded-full"
+          style={{
+            background: `linear-gradient(to right, ${theme.uclaBlue}, ${theme.columbiaBlue})`,
+          }}
+        ></div>
+
+        {/* Category Buttons */}
+        <div className="flex flex-wrap gap-2 justify-center mt-3 sm:mt-5">
+          {faqSections.map((section, index) => (
+            <button
+              key={index}
+              onClick={() => setOpenSection(index)}
+              className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-semibold text-white text-sm sm:text-base transition-all duration-500 shadow-md ${
+                openSection === index ? "bg-[#0b385f] scale-105" : "bg-[#3373b0]"
+              }`}
+            >
+              {section.title}
+            </button>
           ))}
         </div>
-      )}
+
+        {/* Questions Section */}
+        {openSection !== null && (
+          <div className="mt-4 sm:mt-5 bg-white p-3 sm:p-5 rounded-xl shadow-lg w-full max-w-2xl mx-auto">
+            {faqSections[openSection].faqs.map((faq, idx) => (
+              <Question
+                key={idx}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openQuestion[openSection] === idx}
+                onClick={() => toggleQuestion(openSection, idx)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

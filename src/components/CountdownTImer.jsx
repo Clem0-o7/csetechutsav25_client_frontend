@@ -69,7 +69,7 @@ const CountdownTimer = ({ targetDate }) => {
         }}
       >
         <p className="text-sm lg:text-lg tracking-widest font-semibold" style={{ color: theme.berkeleyBlue }}>
-          HACKATHON COUNTDOWN
+          EVENT COUNTDOWN
         </p>
       </div>
       

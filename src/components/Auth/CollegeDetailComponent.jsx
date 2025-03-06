@@ -38,7 +38,7 @@ const CollegeDetailComponent = ({
       elevation={2}
       className="flex flex-col justify-center items-center gap-5 rounded-xl p-5"
     >
-      <h1 className="text-4xl font-bold">TECHUTSAV 2024</h1>
+      <h1 className="text-4xl font-bold">TECHUTSAV 2025</h1>
       <h2 className="font-semibold text-3xl">COLLEGE DETAIL DETAILS</h2>
       <div className="bg-white/50 w-96 h-fit p-7 flex flex-col justify-center rounded-xl relative font-poppins">
         <form className="flex flex-col gap-9">

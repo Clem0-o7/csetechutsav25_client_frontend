@@ -1,0 +1,108 @@
+/* Updated Theme Based on Provided Screenshot */
+
+:root {
+    --primary-color: #1e293b; /* Dark navy blue navbar */
+    --secondary-color: #ffffff; /* White background */
+    --accent-color: #0ea5e9; /* Light blue highlights */
+    --text-color: #1e293b; /* Dark text */
+    --card-bg: #f1f5f9; /* Soft light grayish blue cards */
+    --light-blue-bg: #e0f2fe; /* Light blue section background */
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color) !important;
+    color: white;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid var(--accent-color); /* Highlight active menu */
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Modal Styling */
+.modal-content {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--accent-color);
+    color: white;
+    transition: 0.3s;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.btn:hover {
+    background-color: #0284c7;
+    transform: scale(1.05);
+}
+
+/* About Section Background */
+.about-section {
+    background-color: var(--light-blue-bg);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.about-section h2 {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-box {
+    animation: fadeIn 0.6s ease-in-out;
+    border-radius: 12px;
+    background: var(--card-bg);
+    padding: 15px;
+    transition: box-shadow 0.3s;
+    text-align: center;
+}
+
+.event-box:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
